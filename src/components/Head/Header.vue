@@ -3,7 +3,7 @@
         <div class="d-flex container-xl">
             <div class="row d-flex  align-items-center justify-content-center">
                 <div class="col">
-                    <img src="logo.svg" alt="Logo" class="logo">
+                    <img src="../../assets/logo.svg" alt="Logo" class="logo">
                 </div>
                 <div class="my-auto fs-4 col">Феникс МСК</div>
                 <div class="my-auto col">
