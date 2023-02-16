@@ -1,4 +1,5 @@
 const execa = require("execa");
+const rimraf = require("rimraf");
 const fs = require("fs");
 (async () => {
   try {
