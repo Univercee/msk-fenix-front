@@ -16,8 +16,6 @@ import ProductCard from "./components/Products/ProductCard.vue";
 import Products from "./components/Products/Products.vue";
 import Info from "./components/Info.vue";
 import Socials from "./components/Socials.vue";
-import AdminLogin from "./components/admin/login.vue";
-import EstateCreate from "./components/admin/estates/create.vue";
 import socials_json from "./data/socials.json";
 
 const app = createApp(App)
@@ -30,8 +28,6 @@ app.component("c-filter", Filter);
 app.component("c-header", Header);
 app.component("c-info", Info);
 app.component("c-socials", Socials);
-app.component("c-admin-login", AdminLogin);
-app.component("c-estate-create", EstateCreate);
 
 app.use(store).use(router);
 app.config.globalProperties.emitter = mitt();

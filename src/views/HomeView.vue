@@ -24,9 +24,6 @@ export default {
 *:focus{
   box-shadow: none !important;
 }
-*{
-  transition-duration: 0.15s;
-}
 .background{
   background-image: url('../assets/images/background.jpg');
   background-size: cover;
