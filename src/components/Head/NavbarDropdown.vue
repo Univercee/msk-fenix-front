@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown-my container-lg mx-auto" id="dropdown_my" ref="dropdown_my" @mouseenter="activate" @mouseleave="disable" :class="[hide_dropdown ? 'hidden' : '']">
     <div class="mx-5" v-for="col in active_list" :key="col">
-      <p>{{ col.label }}</p>
+      <p class="p-0">{{ col.label }}</p>
       <ul>
         <a v-for="link in col.links" :key="link" :href="link.href">
           <li>{{ link.name }}</li>
@@ -61,32 +61,46 @@ export default {
 }
 </script>
 
-<style scoped>
-@media screen and (max-width: 992px) {
-  .dropdown-my{
-    display: none !important;
+<style lang="scss" scoped>
+  @media screen and (max-width: 992px) {
+    .dropdown-my{
+      display: none !important;
+    }
   }
 
-}
+  .dropdown-my {
+    display: flex;
+    justify-content: flex-start;
+    opacity: 1;
+    transition-duration: 0.1s;
+    box-shadow: 1px 1px 5px #222;
+    border-radius: 15px;
+    background-color: white;
+    position: absolute;
+    top: 18vh;
+    left: 0;
+    right: 0;
+    margin: auto 0;
+    z-index: 9999;
+    padding: 20px;
+  }
 
-.dropdown-my {
-  display: flex;
-  justify-content: flex-start;
-  opacity: 1;
-  transition-duration: 0.1s;
-  box-shadow: 1px 1px 5px #222;
-  border-radius: 15px;
-  background-color: white;
-  position: absolute;
-  top: 18vh;
-  left: 0;
-  right: 0;
-  margin: auto 0;
-  z-index: 9999;
-  padding: 20px;
-}
+  .hidden {
+    display: none !important;
+  }
+  a{
+    color: darkgray !important;
+    text-decoration: none !important;
 
-.hidden {
-  display: none !important;
-}
+    &:hover{
+      color: $primary !important;
+    }
+  }
+  li{
+    list-style-type: none;
+  }
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+  }
 </style>
