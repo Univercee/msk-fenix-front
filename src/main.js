@@ -9,13 +9,16 @@ import "./libs/axios";
 import App from './App.vue'
 import Navbar from "./components/Head/Navbar.vue";
 import NavbarDropdown from "./components/Head/NavbarDropdown.vue";
-import Footer from "./components/Footer.vue";
+import Footer from "./components/Footer/Footer.vue";
 import Filter from "./components/Filter/Filter.vue";
 import Header from "./components/Head/Header.vue";
 import ProductCard from "./components/Products/ProductCard.vue";
 import Products from "./components/Products/Products.vue";
-import Info from "./components/Info.vue";
-import Socials from "./components/Socials.vue";
+import Info from "./components/Sections/Info.vue";
+import Socials from "./components/Shared/Socials.vue";
+import Widget from "./components/Widgets/Widget.vue";
+import WidgetsRow from "./components/Widgets/WidgetsRow.vue";
+
 import socials_json from "./data/socials.json";
 
 const app = createApp(App)
@@ -28,6 +31,8 @@ app.component("c-filter", Filter);
 app.component("c-header", Header);
 app.component("c-info", Info);
 app.component("c-socials", Socials);
+app.component("c-widget", Widget);
+app.component("c-widgets-row", WidgetsRow);
 
 app.use(store).use(router);
 app.config.globalProperties.emitter = mitt();
