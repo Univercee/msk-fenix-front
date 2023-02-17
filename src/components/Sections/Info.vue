@@ -18,5 +18,6 @@ export default {
 <style scoped>
   p{
     font-size: 17px;
+    padding: 0;
   }
 </style>

@@ -56,10 +56,6 @@ export default {
     .footer-map {
       display: none !important;
     }
-    .footer-socials{
-      justify-content: center !important;
-      gap: 5px;
-    }
     .footer-rights{
       justify-content: center !important;
       text-align: center !important;
@@ -82,15 +78,11 @@ export default {
     color: darkgray !important;
     text-decoration: none !important;
   }
+  p{
+    padding: 0;
+  }
   .footer-map a:hover{
     color: aliceblue !important;
-  }
-  .footer-socials i{
-    font-size: 30px;
-    padding: 5px;
-  }
-  .footer-socials a{
-    color: inherit;
   }
   ul{
     padding: 0;

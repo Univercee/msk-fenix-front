@@ -16,7 +16,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  @include media-breakpoint-down(lg){
+    .footer-socials{
+      justify-content: center !important;
+      gap: 5px;
+    }
+  }
+  .footer-socials i{
+    font-size: 30px;
+    padding: 5px;
+  }
+  .footer-socials a{
+    color: inherit;
+  }
   .fa-facebook{
     color:#4267B2
   }
