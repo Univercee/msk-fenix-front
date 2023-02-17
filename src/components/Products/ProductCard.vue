@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex mt-2">
           <p class="product-card__rooms">2-комн. квартира</p>
-          <p class="product-card__area">10 м.кв.</p>
+          <p class="product-card__area">10 м<sup>2</sup></p>
           <p class="product-card__floor">5/10 эт.</p>
         </div>
         <div class="mt-2">
@@ -46,6 +46,7 @@ export default {
     white-space: nowrap;
     & p{
       margin: 0;
+      padding: 5px;
     }
 
     &__body{
@@ -83,7 +84,6 @@ export default {
     }
 
     &__area{
-      padding: 0 5px;
       margin-right: 10px;
       font-weight: bold;
     }

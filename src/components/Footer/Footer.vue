@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoper>
+<style lang="scss" scoped>
   @include media-breakpoint-down(lg) {
     .footer-map {
       display: none !important;
@@ -79,11 +79,11 @@ export default {
     color: aliceblue;
   }
   a{
-    color: darkgray;
-    text-decoration: none;
+    color: darkgray !important;
+    text-decoration: none !important;
   }
   .footer-map a:hover{
-    color: aliceblue;
+    color: aliceblue !important;
   }
   .footer-socials i{
     font-size: 30px;
