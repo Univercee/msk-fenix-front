@@ -1,23 +1,28 @@
 <template>
-  <div class="wrapper">
-    <arrow direction="left" @click="scrollLeft()"></arrow>
-    <div class="widgets" ref="widgets">
-        <div class="widgets-wrapper" :style="{right:getOffset+'%'}">
-            <c-widget ref="widget" text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_2.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_1.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_3.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_4.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_5.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_6.jpg')+')'}"></c-widget>
-            <c-widget text="Widget text" :style="{width:widgetWidth+'%', backgroundImage:'url('+require('../../assets/images/widget_7.jpg')+')'}"></c-widget>
+<div>
+    <h2 class="mb-5 text-center" style="font-weight: bold;">Сервисы</h2>
+    <div class="wrapper">
+        <!-- <arrow direction="left" @click="scrollLeft()"></arrow> -->
+        <div class="widgets" ref="widgets">
+            <div class="widgets-wrapper" :style="{right:getOffset+'%'}">
+                <c-widget 
+                    v-for="service in services" :key="service"
+                    ref="widget" 
+                    :title="service.title" 
+                    :description="service.description"
+                    :image_url="'url('+require('../../assets/images/'+service.image)+')'"
+                    :style="{width:widgetWidth+'%'}">
+                </c-widget>
+            </div>
         </div>
+        <!-- <arrow direction="right" @click="scrollRight()"></arrow> -->
     </div>
-    <arrow direction="right" @click="scrollRight()"></arrow>
-  </div>
+</div>
 </template>
 
 <script>
 import Arrow from '../assets/arrow.vue'
+import services_json from '../../data/services.json'
 export default {
     components:{
         arrow: Arrow
@@ -25,14 +30,17 @@ export default {
     data(){
         return{
             offsetRight: 1,
-            widgetCount: 7,
             widgetWidth: 19,
-            position: 0
+            position: 0,
+            services: services_json
         }
     },
     computed:{
         widgetInRow(){
             return Math.trunc(100/this.widgetWidth)
+        },
+        widgetCount(){
+            return this.services.length
         },
         canMoveRight(){
             return this.position < this.widgetCount-this.widgetInRow
@@ -41,7 +49,7 @@ export default {
             return this.position > 0
         },
         getOffset(){
-            return (this.widgetWidth+this.offsetRight)*this.position -0.1;
+            return (this.widgetWidth+this.offsetRight)*this.position -0.01;
         }
     },
     methods:{
@@ -74,7 +82,7 @@ export default {
     .widgets{
         scroll-behavior: smooth;
         flex-grow: 1;
-        overflow: hidden visible;
+        overflow: hidden;
         position: relative;
         width: 100%;
         &-wrapper{

@@ -24,9 +24,9 @@ export default {
 }
 .arrow {
     cursor: pointer;
-    height: 120px;
+    height: 60px;
     transition: transform .1s;
-    width: 80px;
+    width: 40px;
     $transition-time: .15s;
     
     &-top,

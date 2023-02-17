@@ -7,8 +7,9 @@
       <c-filter></c-filter>
     </div>
     <main class="container-md mt-5">
-      <c-widgets-row></c-widgets-row>
+      <!-- <h2 class="mb-5 text-center" style="font-weight: bold;">Лучшие предложения</h2> -->
       <c-products class="mt-5"></c-products>
+      <c-widgets-row class="mt-5"></c-widgets-row>
       <c-info class="mt-5"></c-info>
     </main>
     <c-footer class="mt-5"></c-footer>
